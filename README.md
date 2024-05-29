@@ -34,6 +34,7 @@ Your mission, should you choose to accept it, is to develop a report feature. Ea
 
 - Project structure
 - PHP >= 8
+- Composer 2
 - OOP principles
 - Automated Tests
 - SOLID principles
@@ -58,5 +59,6 @@ Extra points for:
 
 - Don’t overengineer your code.
 - Pay special attention to the S, O, and I principles from SOLID.
+- `composer test` might be useful
 
 ### Good Luck! 🍀
