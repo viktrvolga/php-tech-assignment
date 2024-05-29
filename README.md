@@ -61,4 +61,17 @@ Extra points for:
 - Pay special attention to the S, O, and I principles from SOLID.
 - `composer test` might be useful
 
+## Deliverables
+
+- A fully functional webhook handler that processes notifications from `NIRVANA`, `RHCP`, and `SOAD` gateways.
+- Implementation of the `handle` method in `NotificationHandlerService.php` to generate the specified output file.
+- Ensure all tests in the `tests/Feature` directory are passing and validate the output results.
+- A well-documented and structured project adhering to best practices (OOP, SOLID, KISS).
+- A README file detailing:
+  - Project setup instructions.
+  - Explanation of the solution and design decisions.
+  - How to run the tests and verify the implementation.
+- Optional: Docker setup, CI/CD pipeline, and additional points as mentioned in the "Extra points for" section.
+
+
 ### Good Luck! 🍀
