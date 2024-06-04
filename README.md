@@ -63,7 +63,7 @@ Extra points for:
 
 ## Deliverables
 
-- A fully functional webhook handler that processes notifications from `NIRVANA`, `RHCP`, and `SOAD` gateways.
+- A Github `public` repo link, with a fully functional webhook handler that processes notifications from `NIRVANA`, `RHCP`, and `SOAD` gateways.
 - Implementation of the `handle` method in `NotificationHandlerService.php` to generate the specified output file.
 - Ensure all tests in the `tests/Feature` directory are passing and validate the output results.
 - A well-documented and structured project adhering to best practices (OOP, SOLID, KISS).
