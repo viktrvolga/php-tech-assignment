@@ -69,5 +69,8 @@ jobs:
       - name: Install dependencies
         run: composer install --no-ansi --no-interaction --no-progress
 
+      - name: Verify PHPUnit installation
+        run: ./vendor/bin/phpunit --version
+
       - name: Run tests with phpunit
-        run: phpunit --testdox
+        run: ./vendor/bin/phpunit --testdox
