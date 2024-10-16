@@ -1,0 +1,73 @@
+name: "Continuous Integration"
+
+on: [ push, pull_request ]
+
+jobs:
+  code-style:
+    name: Code style
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies with composer
+        run: composer install --no-ansi --no-interaction --no-progress
+
+      - name: Run php-cs-fixer
+        run: ./vendor/bin/php-cs-fixer fix src --dry-run --using-cache=no --verbose
+
+  linter:
+    name: PHPStan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies with composer
+        run: composer install --no-ansi --no-interaction --no-progress
+
+      - name: Run phpstan/phpstan
+        run: ./vendor/bin/phpstan analyse src --level 9
+
+  phpunit:
+    name: PHPUnit
+    runs-on: ubuntu-latest
+
+    env:
+      PHP_EXTENSIONS: dom, json, mbstring, tokenizer
+      PHP_INI_VALUES: assert.exception=1, zend.assertions=1
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Override PHP ini values for JIT compiler
+        run: echo "PHP_INI_VALUES::assert.exception=1, zend.assertions=1, opcache.enable=1, opcache.enable_cli=1, opcache.optimization_level=-1, opcache.jit=1255, opcache.jit_buffer_size=32M" >> $GITHUB_ENV
+
+      - name: Install PHP with extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          extensions: ${{ env.PHP_EXTENSIONS }}
+          ini-values: ${{ env.PHP_INI_VALUES }}
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: composer install --no-ansi --no-interaction --no-progress
+
+      - name: Run tests with phpunit
+        run: phpunit --testdox

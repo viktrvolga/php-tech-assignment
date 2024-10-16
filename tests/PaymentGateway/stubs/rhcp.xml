@@ -1,0 +1,21 @@
+<data>
+    <webhook_id>wh_3HqKD0v7u7qILnzZGMtWpT6N</webhook_id>
+    <event>charge.success</event>
+    <created>2024-07-10T14:20:45Z</created>
+    <entity_type>charge</entity_type>
+    <entity_id>ch_3HqKD0v7u7qILnzZGkR3P4N</entity_id>
+    <total_amount>9000</total_amount>
+    <currency_symbol>EUR</currency_symbol>
+    <user_id>usr_LnYjZ7oUPc0</user_id>
+    <payment_info>
+        <payment_method_id>pm_3HqKD0v7u7qILnzZGJ8Nz0N</payment_method_id>
+        <payment_type>debit_card</payment_type>
+        <debit_card>
+            <issuer>maestro</issuer>
+            <last_four>5678</last_four>
+            <expiration_month>6</expiration_month>
+            <expiration_year>2026</expiration_year>
+        </debit_card>
+    </payment_info>
+    <charge_status>successful</charge_status>
+</data>

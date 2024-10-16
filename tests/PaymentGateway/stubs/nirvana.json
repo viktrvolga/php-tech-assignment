@@ -1,0 +1,21 @@
+{
+    "event_id": "evt_1GqIC8u4q5nGOlvXEJsWlN4L",
+    "event_type": "payment_intent.succeeded",
+    "created_at": "2024-05-27T12:34:56Z",
+    "resource_type": "payment_intent",
+    "resource_id": "pi_1GqIC7u4q5nGOlvXkqS1K2LJ",
+    "amount_received": 5000,
+    "currency": "EUR",
+    "customer_id": "cus_JeWjZ5nUOa6",
+    "payment_method": {
+        "id": "pm_1GqIC7u4q5nGOlvXYW5LZ4LJ",
+        "type": "card",
+        "card": {
+            "brand": "visa",
+            "last4": "4242",
+            "exp_month": 8,
+            "exp_year": 2024
+        }
+    },
+    "status": "succeeded"
+}

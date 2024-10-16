@@ -1,0 +1,21 @@
+{
+    "id": "event_2GqJC9v5t6pHPlzYFMsVnP5M",
+    "type": "transaction.completed",
+    "timestamp": "2024-06-15T09:45:30Z",
+    "object_type": "transaction",
+    "object_id": "txn_2GqJC8v5t6pHPlzYmqR2L3M",
+    "amount": 7500,
+    "currency_code": "EUR",
+    "client_id": "cli_KdXkY6oVPb9",
+    "payment_details": {
+        "payment_id": "pay_2GqJC8v5t6pHPlzYFJ7Mz9M",
+        "method": "credit_card",
+        "credit_card": {
+            "network": "mastercard",
+            "last_digits": "1234",
+            "expiry_month": 12,
+            "expiry_year": 2025
+        }
+    },
+    "transaction_status": "completed"
+}
